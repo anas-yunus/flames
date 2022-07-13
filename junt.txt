@@ -1,0 +1,14 @@
+JaKe
+MaRIe
+
+1. split names into char arrays //
+2. check if any characters on either arrays match //
+3. remove all matching characters //
+4. count the remaining chars //
+5. loop thru the flames array, and remove corresponding char in the array
+6. cont. until flamesArray.length == 1
+7. use switch to output the result
+
+
+
+Flames
