@@ -8,6 +8,58 @@ body {
     background-color: grey;
 }
 
-p {
+#heading {
+    margin: 10px auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 227px;
+    margin-top: 130px;
+    /*border: 2px solid black;*/
+    font-weight: bold;
+}
+
+#tag{
+    margin: 10px auto;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 227px;
+    color: rgb(80, 80, 80);
+}
+
+#output {
     margin: 0;
+    background-color: greenyellow;
+    width: 207px;
+}
+
+input {
+    width: 200px;
+    margin: 2px 0px;
+    border: 2px solid black;
+
+}
+
+hr {
+    width: 205px;
+    border-color: black;
+}
+
+.container {
+
+    margin: 10px auto;
+    padding: 10px;
+    border: 2px solid black;
+
+    width: 207px;
+    background-color: yellow;
+}
+
+#submitBtn {
+    margin: 10px auto;
+    display: flex;
+    background-color: tomato;
+    border: 2px solid black;
+    font-weight: bold;
 }
