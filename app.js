@@ -2,44 +2,46 @@
 const boyInputEl = document.getElementById("boy")
 const girlInputEl = document.getElementById("girl")
 const outputEl = document.getElementById("output")
-const loggerEl = document.getElementById("logg")
+//const loggerEl = document.getElementById("logg")
 let flamesArray = ["F", "L", "A", "M", "E", "S"]
+
+
+console.log("You might want to reload");
 
 function execute() {
 
     //INITIALIZATION
     let flamesArray = ["F", "L", "A", "M", "E", "S"]
     let difference=''
-    let boyName = boyInputEl.value.toLowerCase()
-    let girlName = girlInputEl.value.toLowerCase()
-    if(boyName == "" || girlName == ""){
-        
-    }
-    boyName = boyName.replace(/\s/g, "")
-    girlName = girlName.replace(/\s/g, "")
-    boyNameArray = boyName.split("")
-    girlNameArray = girlName.split("")
+    let boyName = boyInputEl.value.toLowerCase()  // Making all chars lowercase
+    let girlName = girlInputEl.value.toLowerCase()// ^
+    boyName = boyName.replace(/\s/g, "")   // Replacing whitespaces in the strings
+    girlName = girlName.replace(/\s/g, "") // ^
+    boyNameArray = boyName.split("")   // splitting the chars of the name into an array
+    girlNameArray = girlName.split("") // ^
     console.log(boyNameArray,girlNameArray);
 
     // CHARACTER SPLITTING
-    const x = boyNameArray.filter(x => !girlNameArray.includes(x));
-    const y = girlNameArray.filter(x => !boyNameArray.includes(x));
-    difference = x.concat(y);
+    const x = boyNameArray.filter(x => !girlNameArray.includes(x))  // makes a new array from girlnamearray which has elements from boynamearray
+    const y = girlNameArray.filter(x => !boyNameArray.includes(x))  // ^                      ^boynamearray                         ^girlnamearray
+    difference = x.concat(y) // concatinates the elements from both array to delete duplicates
+
+    
 
     //CUTTING FLAMES
     console.log("difference ", difference.length);
-    //loggerEl.innerHTML = `Difference ${difference.length} <br>`
     let lastIndex = 0;
     for (let i = 0; i < 5; i++) {
         console.log(flamesArray)
-        //loggerEl.innerHTML += `${flamesArray} <br>`
-        const i = difference.length - 1 //index you wanna access
-        const n = flamesArray.length
-        //console.log();
-        let x = ((i + lastIndex ) % n + n) % n
+
+        const i = difference.length - 1 //index you wanna access (-1 cz its index)
+        const n = flamesArray.length //length of the array
+
+        let x = ((i + lastIndex ) % n + n) % n // Adds the index of prev deleted element to the current index value
+                                               // And performs a modulo operation for looping through the array in a circular way
         flamesArray.splice(x, 1)
         lastIndex = x
-        //console.log(lastIndex)
+
     }
 
     //RESULT CARRYING AND OUTPUT
